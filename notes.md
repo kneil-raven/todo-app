@@ -1,6 +1,6 @@
 # Simple TODO App — Summary & Guide ✅📒
 
-**Modular Architecture | CRUD | LocalStorage | Pure JS**
+**Modular Architecture | CRUD | localStorage | Pure JS**
 
 ## 🔧 Step-by-Step Development Guide
 
@@ -18,5 +18,10 @@
 
 - Contains core operations for the TODO list.
 - ✅ **Key Point:** Keep the state (todos) in memory and sync with storage.
+- ✅ Study CRUD, reorganize functions using best practices.
 
-### Step 4: 
+### Step 4: dom.js (UI Rendering & Events)
+
+- Builds and updates the DOM from the TODO state.
+- ✅ **Key Point:** Fully rebuild the UI on every update using `renderTodos().`
+- Use the core logic functions from the `todos.js` module 

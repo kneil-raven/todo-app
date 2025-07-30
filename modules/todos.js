@@ -2,31 +2,31 @@ import { saveToStorage, loadFromStorage } from './storage.js';
 
 let todos = loadFromStorage();
 
-// return current list of todos (R)
-export function getTodos() {
-    return todos;
-}
-
-// create a new todo (C)
+// adds new todo to the list
 export function addTodo(text) {
     const newTodo = {
         id: Date.now().toString(),
         text
-    }
-    todos.push(newTodo);    //update memory
-    saveToStorage(todos);   //save to LocalStorage
-}
-
-// delete an existing todo (D)
-export function deleteTodo(id) {
-    todos = todos.filter(todo => todo.id  !== id);
+    };
+    todos.push(newTodo);
     saveToStorage(todos);
 }
 
-// update an existing todo (U)
+// retrieve the current list of todos
+export function getTodo() {
+    return todos;
+}
+
+// update a todo's text
 export function updateTodo(id, newText) {
     todos = todos.map(todo => 
         todo.id === id ? { ...todo, text: newText } : todo
     );
+    saveToStorage(todos);
+}
+
+// delete a todo by ID
+export function deleteTodo(id) {
+    todos = todos.filter(todo => todo.id !== id);
     saveToStorage(todos);
 }

@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
+      <div class="header">
         <h1>Todo List</h1>
+      </div>
+
+      <div class="todo-form-container">
+        <form id="todo-form" class="form-group">
+          <input
+            type="text"
+            id="todo-input"
+            placeholder="Test task..."
+            class="form-input"
+            required
+          />
+          <button type="submit" id="addTodoBtn" class="btn btn-primary">
+            ➕ Add Task
+          </button>
+        </form>
+      </div>
+
+      <ul id="todo-list"></ul>
     </div>
-    <form id="todo-form">
-        <input type="text" placeholder="Add new task..." id="todo-input">
-        <button type="submit">Add</button>
-        <ul id="todo-list"></ul>
-    </form>
+
     <script type="module" src="app.js"></script>
-</body>
+  </body>
 </html>

@@ -7,6 +7,7 @@ const input = document.getElementById('todo-input');
 
 
 form.addEventListener('submit', (e) => {
+    e.preventDefault();
     const text = input.value.trim();
     if (text !== '') {
         addTodo(text);  //add new todo to storage

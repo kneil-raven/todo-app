@@ -47,8 +47,9 @@ function createTodoItem(todo) {
   span.textContent = todo.text;
   span.className = 'todo-text';
   if (todo.completed) {
-    span.style.textDecoration = 'line-through';
-    span.style.opacity = 0.5;
+    span.classList.add('todo-item-completed');
+  } else {
+    span.classList.remove('completed');
   }
 
   // append left section
@@ -67,12 +68,12 @@ function createActionButtons(id, span) {
   actions.className = 'actions';    // ==> Right Section (Edit/Delete buttons)
 
   const editBtn = document.createElement('button');
-  editBtn.textContent = 'Edit';
+  editBtn.textContent = '✍️ Edit';
   editBtn.classList.add('btn', 'edit-btn');
   editBtn.onclick = () => handleEdit(id, span);
 
   const deleteBtn = document.createElement('button');
-  deleteBtn.textContent = 'Delete';
+  deleteBtn.textContent = '🗑️ Delete';
   deleteBtn.classList.add('btn', 'delete-btn');
   deleteBtn.onclick = () => {
     deleteTodo(id);
@@ -85,12 +86,30 @@ function createActionButtons(id, span) {
 
 // Replace span with input + save
 function handleEdit(id, span) {
+  const li = span.closest('li');
+
+  // Hide action buttons
+  const hideActionButtons = li.querySelector('.actions');
+  if (hideActionButtons) {
+    hideActionButtons.style.display = 'none';
+  }
+
+  // replace text span and create editable input + save button
   const input = document.createElement('input');
   input.value = span.textContent;
+  input.classList.add('edit-input');
 
+  // save button
   const saveBtn = document.createElement('button');
-  saveBtn.textContent = 'Save';
+  saveBtn.textContent = '💾 Save';
+  saveBtn.classList.add('btn', 'save-btn');
 
+  // cancel button
+  const cancelBtn = document.createElement('button');
+  cancelBtn.textContent = '❌ Cancel';
+  cancelBtn.classList.add('btn', 'cancel-btn');
+
+  // save button logic
   saveBtn.onclick = () => {
     const newText = input.value.trim();
     if (newText !== '') {
@@ -99,7 +118,15 @@ function handleEdit(id, span) {
     }
   };
 
-  const li = span.parentElement;
-  li.innerHTML = '';
-  li.append(input, saveBtn);
+  // cancel button logic
+  cancelBtn.onclick = () => {
+    renderTodos();  //go back to original
+  }
+
+  const todoLeft = li.querySelector('.todo-left');
+  todoLeft.innerHTML = '';
+  todoLeft.append(input, saveBtn, cancelBtn)
+  
+  // li.innerHTML = '';
+  // li.append(input, saveBtn);
 }

@@ -19,6 +19,7 @@
 - Contains core operations for the TODO list.
 - ✅ **Key Point:** Keep the state (todos) in memory and sync with storage.
 - ✅ Study CRUD, reorganize functions using best practices.
+- How to add, get, update, delete the Todos
 
 ### Step 4: dom.js (UI Rendering & Events)
 
@@ -40,3 +41,4 @@
   ```
 
 - CONTINUE WORKING WITH THE TODO-ITEMS SECTION, CLEAN UP FURTHER
+- continue to `todo-item:hover`

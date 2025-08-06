@@ -38,6 +38,7 @@ body {
   margin-bottom: 10px;
 }
 
+/* === INPUT TODO SECTION === */
 .todo-form-container {
   padding: 30px;
   border-bottom: 1px solid #1f2d3d;
@@ -66,6 +67,7 @@ body {
   box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
 }
 
+/* BUTTONS */
 .btn {
   padding: 15px;
   border: none;
@@ -91,7 +93,8 @@ body {
   box-shadow: 0 10px 20px rgba(79, 172, 254, 0.5);
 }
 
-#todo-list {
+/* === TODO ITEMS SECTION === */
+.todo-list-container {
   padding: 30px;
   min-height: 300px;
 }
@@ -103,77 +106,60 @@ body {
   padding: 20px;
   margin-bottom: 20px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* align-items: center; */
+  /* justify-content: space-between; */
   gap: 10px;
 }
 
-/* button-wrapper */
-/* .actions {
+.todo-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  gap: 0.5rem;
+  min-width: auto;
+  /* background: red; */
+  /* box-shadow: 0 5px 100px rgba(0, 0, 0, 0.3); */
+}
+
+.todo-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.todo-item-completed {
+  opacity: 0.5;
+  background: #f8f9fa;
+  text-decoration: line-through;
+}
+
+.todo-text {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* === BUTTON ACTIONS-WRAPPER === */
+.actions {
   display: flex;
   justify-content: flex-end;
-  gap: 20px;
-} */
-
-ul li {
-  list-style-type: none ;
+  gap: 0.5rem;
 }
 
-/* 
-.container {
-    width: 400px;
-    margin: 50px auto;
-    background: white;
-    padding: 10px;
-    border-radius: 20px;
-    text-align: center;
-} 
 
-.form {
-    display: flex;
-    gap: 10px;
-}
-
-input {
-    flex: 1;
-    padding: 8px;
-}
-
-button {
-    padding: 8px 12px;
-    cursor: pointer;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-li {
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  margin: 10px auto;
-  padding: 10px;
-  width: 500px;
-}
-
-li {
+/* === EDIT HANDLER SECTION */
+.edit-input {
+  background: white;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  font-size: 16px;
 }
 
-li span {
-  flex: 1;
+.edit-input:focus {
+  outline: none;
+  border-color: #4facfe;
+  box-shadow: 0 0 0 2px rgba(79, 172, 254, 0.2);
 }
-
-li input[type="text"] {
-  flex: 1;
-}
-
-.actions button {
-  margin-left: 5px;
-}
-
-*/

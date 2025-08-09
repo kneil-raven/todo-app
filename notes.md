@@ -27,7 +27,9 @@
 - ✅ **Key Point:** Fully rebuild the UI on every update using `renderTodos().`
 - Use the core logic functions from the `todos.js` module
 
-### Step 5: Customizing CSS
+### Step 5: app.js (Entry point and event listeners)
+
+### Step 7: Customizing CSS
 
 - ❌ create style for the edit, delete button
 - ❌ the new task in new line instead of inline with the task input

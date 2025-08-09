@@ -8,7 +8,7 @@ const listElement = document.getElementById('todo-list');
 export function renderTodos() {
   clearTodoList();
   const todos = getTodos();
-  console.log('TODOS: ', todos)
+  // console.log('TODOS: ', todos)   // debugging: log todos to console
 
   todos.forEach((todo) => {
     const todoItem = createTodoItem(todo);
@@ -94,7 +94,7 @@ function handleEdit(id, span) {
     hideActionButtons.style.display = 'none';
   }
 
-  // replace text span and create editable input + save button
+  // create editable input
   const input = document.createElement('input');
   input.value = span.textContent;
   input.classList.add('edit-input');
@@ -108,6 +108,11 @@ function handleEdit(id, span) {
   const cancelBtn = document.createElement('button');
   cancelBtn.textContent = '❌ Cancel';
   cancelBtn.classList.add('btn', 'cancel-btn');
+
+  // button wrapper
+  const buttonGroup = document.createElement('div');
+  buttonGroup.classList.add('edit-button-group');
+  buttonGroup.append(saveBtn, cancelBtn);
 
   // save button logic
   saveBtn.onclick = () => {
@@ -125,7 +130,8 @@ function handleEdit(id, span) {
 
   const todoLeft = li.querySelector('.todo-left');
   todoLeft.innerHTML = '';
-  todoLeft.append(input, saveBtn, cancelBtn)
+  // todoLeft.append(input, saveBtn, cancelBtn)
+  todoLeft.append(input, buttonGroup)
   
   // li.innerHTML = '';
   // li.append(input, saveBtn);
